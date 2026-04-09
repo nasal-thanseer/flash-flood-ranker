@@ -6,9 +6,9 @@ def analyze_flood_risk(location, lat, lon):
     return run_agent(location, lat, lon)
 
 
-st.set_page_config(page_title="Flash Flood Street Ranker", page_icon="🌊", layout="wide")
+st.set_page_config(page_title="Flash Flood Street Ranker", layout="wide")
 
-st.title("🌊 Flash Flood Street Ranker")
+st.title("Flash Flood Street Ranker")
 st.markdown("An AI Agent predicting which informal settlement streets to evacuate first based on live weather data and street topology.")
 
 with st.sidebar:
@@ -29,18 +29,18 @@ if submit_button:
             
     col1, col2 = st.columns(2)
     with col1:
-        st.info("🌦️ Current Weather Data")
+        st.info("Current Weather Data")
         weather = result.get("weather", {})
         st.metric("Current Precipitation", f"{weather.get('current_precipitation_mm', 0)} mm")
         st.metric("Expected 24h Precipitation", f"{weather.get('next_24h_precipitation_mm', 0)} mm")
         
     with col2:
-        st.info("🗺️ Analyzed Roads")
+        st.info("Analyzed Roads")
         roads = result.get("roads", [])
         st.write(f"Analyzed {len(roads)} streets in the vicinity using Overpass API.")
         st.write(", ".join(roads[:10]) + ("..." if len(roads) > 10 else ""))
         
-    st.subheader(f"🚨 Evacuation Priority Ranking for {location.title()}")
+    st.subheader(f"Evacuation Priority Ranking for {location.title()}")
     rankings = result.get("rankings", [])
     
     if rankings:
