@@ -1,7 +1,5 @@
 # 🌊 Flash Flood Street Ranker
 
-**Final Submission Project: AI Strategy & Business Intelligence Internship @ IBM**
-
 ## 📖 Overview
 The **Flash Flood Street Ranker** is an AI-powered agentic system engineered to pre-emptively rank street-level vulnerabilities in informal settlements during heavy rainfalls. By synthesizing real-time meteorological data with topographical street layouts, the Agent autonomously designates which streets require priority evacuations *before* water arrives.
 
@@ -32,7 +30,6 @@ Inside `.env`, provide a valid Google Generative Language API key:
 ```env
 GEMINI_API_KEY="AIza..."
 ```
-*(Your key is safely hidden from version control via `.gitignore`.)*
 
 ## 🚀 Execution
 Run the primary **Streamlit Dashboard** for full UI and dynamic location interaction:
